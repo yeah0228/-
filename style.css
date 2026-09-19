@@ -1,0 +1,39 @@
+.drop-cap::first-letter {
+  font-family: 'Noto Serif TC', serif;
+  font-size: 3.8rem;
+  line-height: 0.9;
+  float: left;
+  margin-right: 0.75rem;
+  margin-top: 0.2rem;
+  font-weight: 900;
+  color: #C8102E;
+}
+
+.editorial-quote::before {
+  content: "“";
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  font-size: 5rem;
+  color: #C8102E;
+  opacity: 0.15;
+  font-family: serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+button, a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+#imageModal img {
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  .editorial-quote::before {
+    left: 4px;
+  }
+}
