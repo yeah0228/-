@@ -1,36 +1,54 @@
-# Global Insights V2
+# GLOBAL INSIGHTS
 
-這個版本改成「首頁＋文章頁」的靜態網站架構。
+這是長期經營版的網站起始專案，採用：
 
-## 結構
+- Next.js App Router
+- TypeScript
+- Supabase（PostgreSQL / Auth / Storage）
+- Responsive Web Design
 
-```text
-global-insights/
-├── index.html
-├── articles/
-│   └── japan-working-holiday.html
-├── people/
-├── assets/
-│   ├── css/style.css
-│   ├── js/main.js
-│   └── images/
-└── README.md
+## 1. 安裝
+
+```bash
+npm install
 ```
 
-## 新增文章
+## 2. 建立 Supabase
 
-複製 `articles/japan-working-holiday.html`，例如：
+建立一個 Supabase project，然後把 `supabase/schema.sql` 貼到 SQL Editor 執行。
 
-`articles/australia-working-holiday.html`
+再建立 `.env.local`：
 
-然後在首頁的卡片加入連結即可。
+```env
+NEXT_PUBLIC_SUPABASE_URL=你的網址
+NEXT_PUBLIC_SUPABASE_ANON_KEY=你的匿名金鑰
+```
 
-## 部署
+## 3. 啟動
 
-直接將整個資料夾部署到 Netlify、GitHub Pages 或其他靜態網站主機。
+```bash
+npm run dev
+```
 
-本版本使用絕對路徑 `/assets/...`，因此建議部署在網域根目錄；GitHub Pages 若使用 `https://帳號.github.io/專案名/` 這種子路徑，需改成相對路徑或設定 base path。
+瀏覽：
 
-## 圖片
+http://localhost:3000
 
-目前保留原本的 Unsplash 遠端圖片，`assets/images/` 已預留給未來的本地圖片。
+## 4. 正式部署
+
+建議使用 Vercel 部署 Next.js，Supabase 負責資料庫、登入與圖片儲存。
+
+## 5. 下一階段
+
+目前專案已把「前台網站 + 資料庫模型 + 管理後台入口」建立好。
+
+正式上線前建議再完成：
+
+1. Supabase Auth 管理員登入
+2. Admin CRUD
+3. Supabase Storage 圖片上傳
+4. 文章編輯器
+5. SEO / sitemap / OG image
+6. 網站分析
+7. 備份與權限
+8. 自訂網域
