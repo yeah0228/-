@@ -1,66 +1,36 @@
-# Global Insights — 日本打工度假人物專題
+# Global Insights V2
 
-## 專案結構
+這個版本改成「首頁＋文章頁」的靜態網站架構。
+
+## 結構
 
 ```text
 global-insights/
 ├── index.html
+├── articles/
+│   └── japan-working-holiday.html
+├── people/
 ├── assets/
-│   ├── css/
-│   │   └── style.css
-│   ├── js/
-│   │   └── main.js
+│   ├── css/style.css
+│   ├── js/main.js
 │   └── images/
-│       └── （預留本地圖片）
 └── README.md
 ```
 
-## 直接部署
+## 新增文章
 
-這是一個純靜態網站，不需要 Node.js、PHP 或資料庫。
+複製 `articles/japan-working-holiday.html`，例如：
 
-### Netlify
-1. 將整個 `global-insights` 資料夾拖到 Netlify 的部署區。
-2. 部署完成後即可取得 `.netlify.app` 網址。
+`articles/australia-working-holiday.html`
 
-### GitHub Pages
-1. 建立 GitHub Repository。
-2. 上傳整個資料夾內的檔案。
-3. Settings → Pages → Deploy from a branch。
-4. 選 `main` / `/root`（依 GitHub 介面顯示）。
-5. 儲存後等待部署。
+然後在首頁的卡片加入連結即可。
 
-## 本地預覽
+## 部署
 
-直接雙擊 `index.html` 通常即可查看。
+直接將整個資料夾部署到 Netlify、GitHub Pages 或其他靜態網站主機。
 
-若瀏覽器對本地檔案有額外限制，也可以使用 VS Code 的 Live Server。
+本版本使用絕對路徑 `/assets/...`，因此建議部署在網域根目錄；GitHub Pages 若使用 `https://帳號.github.io/專案名/` 這種子路徑，需改成相對路徑或設定 base path。
 
 ## 圖片
 
-目前保留原本 HTML 中的 Unsplash 遠端圖片網址，方便直接部署與預覽。
-
-正式網站建議將確認過授權的圖片放入：
-
-```text
-assets/images/
-```
-
-再把 HTML 的圖片路徑改成：
-
-```html
-./assets/images/檔名.jpg
-```
-
-## 後續擴充
-
-可以在此結構上新增：
-
-```text
-articles/
-people/
-about/
-assets/images/
-```
-
-逐步擴充成完整的 Global Insights 專題網站。
+目前保留原本的 Unsplash 遠端圖片，`assets/images/` 已預留給未來的本地圖片。

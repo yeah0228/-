@@ -1,248 +1,83 @@
 <!DOCTYPE html>
-<html lang="zh-TW" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Global Insights 海外人物專題：日本打工度假真實採訪，記錄北海道與九州的工作、生活、文化體驗與生存經驗。">
-  <meta name="theme-color" content="#0F172A">
-  <meta property="og:title" content="極限雪景與獨自生存的磨練：日本打工度假現場紀錄">
-  <meta property="og:description" content="深入採訪受訪者 A 小姐的日本打工度假紀實。">
-  <meta property="og:type" content="article">
-  <title>【海外人物專題】極限雪景與獨自生存的磨練：日本打工度假生存指南 - Global Insights</title>
-
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./assets/css/style.css">
-
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              red: '#C8102E',
-              dark: '#0F172A',
-              slate: '#1E293B',
-              paper: '#FAF9F6',
-              gold: '#D97706'
-            }
-          },
-          fontFamily: {
-            serif: ['"Noto Serif TC"', 'serif'],
-            sans: ['Inter', 'sans-serif'],
-          }
-        }
-      }
-    }
-  </script>
-</head>
-<body class="bg-[#FAF9F6] text-gray-900 dark:bg-slate-900 dark:text-gray-100 font-sans transition-colors duration-200 antialiased min-h-screen flex flex-col pb-12">
-
-  <div class="fixed top-0 left-0 w-full h-1.5 bg-gray-200 dark:bg-gray-800 z-50">
-    <div id="progressBar" class="h-full bg-brand-red w-0 transition-all duration-150"></div>
+<html lang="zh-TW" class="scroll-smooth"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Global Insights｜海外人物專題、跨文化生活與真實人物故事。">
+<meta property="og:title" content="Global Insights｜海外人物專題">
+<meta property="og:description" content="從人物故事出發，看見海外生活的真實現場。">
+<meta property="og:type" content="website"><title>Global Insights｜海外人物專題</title><script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/style.css">
+<script>
+tailwind.config={darkMode:"class",theme:{extend:{colors:{brand:{red:"#C8102E",dark:"#0F172A",slate:"#1E293B",paper:"#FAF9F6",gold:"#D97706"}},fontFamily:{serif:['"Noto Serif TC"',"serif"],sans:["Inter","sans-serif"]}}}};
+</script>
+</head><body class="bg-[#FAF9F6] text-gray-900 dark:bg-slate-900 dark:text-gray-100 antialiased">
+<div class="fixed top-0 left-0 w-full h-1.5 bg-gray-200 dark:bg-gray-800 z-50"><div id="progressBar" class="h-full bg-brand-red w-0"></div></div>
+<header class="sticky top-0 z-40 border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur shadow-sm">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 flex justify-between">
+  <span data-current-date><i class="far fa-calendar-alt mr-1"></i> Loading...</span><span class="hidden md:inline text-brand-red font-semibold">特派深度人物專題</span>
+ </div>
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center gap-4">
+  <a href="/index.html" class="flex flex-col shrink-0"><span class="text-2xl sm:text-3xl font-black font-serif tracking-tight dark:text-white">GLOBAL INSIGHTS</span><span class="text-[10px] tracking-widest text-gray-500 uppercase font-bold">新聞專題 • 深度人物實錄</span></a>
+  <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold dark:text-gray-200">
+   <a href="/index.html#featured" class="hover:text-brand-red">人物專題</a><a href="/index.html#latest" class="hover:text-brand-red">最新報導</a><a href="/index.html#about" class="hover:text-brand-red">關於我們</a>
+  </nav>
+  <div class="flex items-center gap-2">
+   <button id="searchBtn" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800" title="搜尋"><i class="fas fa-search"></i></button>
+   <button id="themeToggle" class="p-2 rounded-lg bg-gray-100 dark:bg-gray-800"><i class="fas fa-moon dark:hidden"></i><i class="fas fa-sun hidden dark:inline text-yellow-400"></i></button>
   </div>
+ </div>
+ <div id="searchPanel" class="hidden border-t border-gray-100 dark:border-gray-800">
+  <div class="max-w-7xl mx-auto px-4 py-4"><input class="w-full rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-slate-800 px-4 py-3 outline-none" placeholder="搜尋人物、地點、主題（介面預留）"></div>
+ </div>
+</header>
 
-  <div id="toast" class="fixed bottom-8 right-5 z-50 bg-brand-dark text-white text-xs px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 translate-y-20 opacity-0 transition-all duration-300 border border-slate-700">
-    <i class="fas fa-check-circle text-brand-gold"></i>
-    <span id="toastMsg">系統通知</span>
+
+<section class="bg-brand-dark text-white">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 grid lg:grid-cols-2 gap-12 items-center">
+  <div><span class="inline-flex px-3 py-1 rounded-full bg-brand-red text-xs font-bold tracking-widest">GLOBAL INSIGHTS</span>
+   <h1 class="text-4xl sm:text-6xl font-black font-serif leading-tight mt-5">從一個人的故事，<br><span class="text-gray-300">看見世界的現場。</span></h1>
+   <p class="mt-6 text-gray-300 font-serif text-lg leading-relaxed max-w-xl">專注海外人物、工作、生活與文化體驗的深度採訪。把「出國」背後那些沒人告訴你的真實細節，完整留下來。</p>
+   <div class="mt-8 flex flex-wrap gap-3"><a href="#featured" class="px-5 py-3 bg-brand-red rounded-xl font-bold hover:bg-red-700">閱讀人物專題</a><a href="#about" class="px-5 py-3 border border-gray-600 rounded-xl hover:bg-white/10">認識 Global Insights</a></div>
   </div>
-
-  <header class="border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur sticky top-0 z-40 shadow-sm">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 text-xs text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-800 flex justify-between items-center">
-      <div class="flex items-center space-x-4">
-        <span id="currentDate" class="font-medium"><i class="far fa-calendar-alt mr-1"></i> Loading date...</span>
-        <span class="hidden md:inline-block border-l border-gray-300 dark:border-gray-700 h-3"></span>
-        <span class="hidden md:inline-block text-brand-red font-semibold"><i class="fas fa-newspaper mr-1"></i> 特派深度人物專題：日本打工度假全紀錄</span>
-      </div>
-      <div class="flex items-center space-x-3">
-        <div class="flex items-center bg-gray-100 dark:bg-gray-800 rounded-md p-0.5">
-          <button id="fontDecrease" title="縮小字型" class="w-6 h-6 flex items-center justify-center rounded hover:bg-white dark:hover:bg-gray-700 font-bold text-xs">A-</button>
-          <button id="fontReset" title="預設字型" class="px-1 text-[11px] hover:bg-white dark:hover:bg-gray-700 rounded">100%</button>
-          <button id="fontIncrease" title="放大字型" class="w-6 h-6 flex items-center justify-center rounded hover:bg-white dark:hover:bg-gray-700 font-bold text-xs">A+</button>
-        </div>
-        <button id="layoutToggle" title="切換閱讀模式" class="hidden sm:flex items-center space-x-1 p-1.5 rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-xs">
-          <i class="fas fa-columns text-brand-red"></i>
-          <span id="layoutModeText" class="hidden md:inline">雙欄雜誌</span>
-        </button>
-        <button id="themeToggle" title="深色模式" class="p-1.5 rounded-md bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition">
-          <i class="fas fa-moon dark:hidden"></i>
-          <i class="fas fa-sun hidden dark:inline-block text-yellow-400"></i>
-        </button>
-      </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-      <a href="#" class="flex flex-col">
-        <span class="text-2xl sm:text-3xl font-black font-serif tracking-tight text-gray-900 dark:text-white hover:text-brand-red transition">GLOBAL INSIGHTS</span>
-        <span class="text-[10px] tracking-widest text-gray-500 uppercase font-bold">新聞專題 • 深度人物實錄</span>
-      </a>
-      <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-gray-700 dark:text-gray-200">
-        <a href="#interview-section" class="hover:text-brand-red transition">專訪內文紀錄</a>
-        <a href="#archive-section" class="hover:text-brand-red transition">受訪者檔案庫</a>
-      </nav>
-      <button id="summaryDrawerBtn" class="px-3 py-1.5 text-xs font-semibold rounded-full bg-brand-red text-white hover:bg-red-700 transition flex items-center gap-1.5 shadow-sm">
-        <i class="fas fa-bolt"></i><span>重點導覽</span>
-      </button>
-    </div>
-  </header>
-
-  <section class="relative bg-brand-dark text-white overflow-hidden py-12 lg:py-16 border-b border-gray-800">
-    <div class="absolute inset-0 opacity-25 mix-blend-luminosity bg-cover bg-center" style="background-image:url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop');"></div>
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/85 to-transparent"></div>
-    <div class="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center sm:text-left">
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-red text-white text-xs font-bold uppercase tracking-widest mb-4">
-        <i class="fas fa-pen-nib"></i> 海外人物專題訪談
-      </div>
-      <h1 id="heroTitle" class="text-3xl sm:text-5xl font-black font-serif leading-tight mb-4">極限雪景與獨自生存的磨練：<br class="hidden sm:block"/>日本打工度假現場紀錄</h1>
-      <p id="heroSubtitle" class="text-base sm:text-lg text-gray-300 font-serif max-w-3xl mb-6 leading-relaxed">深入採訪受訪者 A 小姐的跨國紀實：北海道知床流冰漫步、代辦護照拼音錯誤危機，以及在九州飯店獨自面對日語實戰的九個月生存故事。</p>
-      <div class="flex flex-wrap items-center justify-between gap-4 border-t border-gray-800 pt-6 text-xs text-gray-400">
-        <div class="flex items-center space-x-3">
-          <img class="w-10 h-10 rounded-full border-2 border-brand-red object-cover shadow" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="受訪者照片">
-          <div><div class="font-bold text-white">受訪者：A 小姐 (Anonymity)</div><div class="text-[11px] text-gray-400">訪談對象 • 北海道 / 九州打工度假者</div></div>
-        </div>
-        <button onclick="openSummaryDrawer()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-white font-medium rounded-lg border border-slate-700 transition flex items-center gap-2">
-          <i class="fas fa-list-ul text-brand-gold"></i><span>快速查看訪談重點精華</span>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow">
-    <div id="mainGrid" class="grid grid-cols-1 lg:grid-cols-12 gap-10">
-      <article id="interview-section" class="lg:col-span-8 space-y-10 text-gray-800 dark:text-gray-200 text-base leading-relaxed">
-
-        <div class="bg-white dark:bg-slate-800 p-6 sm:p-8 rounded-2xl border border-gray-200 dark:border-gray-700 shadow-sm space-y-3">
-          <h2 class="text-lg font-bold font-serif text-brand-red uppercase tracking-wider flex items-center gap-2"><i class="fas fa-quote-left"></i> 採訪背景說明</h2>
-          <p class="drop-cap text-gray-700 dark:text-gray-300 font-serif">本專題完整收錄台灣青年赴日打工度假的真實採訪問答內容。透過訪談問答（Q&A）形式，呈現受訪者從出發動機、尋找包吃包住職缺、踩坑避雷經驗，到獨自在日本跨過語言壁壘的心路歷程。</p>
-        </div>
-
-        <section class="qa-block bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm space-y-4">
-          <div class="border-b border-gray-100 dark:border-gray-700 pb-3"><span class="px-3 py-1 bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300 text-xs font-bold rounded-full inline-flex items-center gap-1"><i class="fas fa-compass"></i> Q1. 出發動機與追星</span></div>
-          <div class="flex items-start gap-3 bg-blue-50/60 dark:bg-blue-950/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/50">
-            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">問</div>
-            <div><div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-0.5">採訪者：</div><h3 class="text-lg font-bold font-serif text-gray-900 dark:text-white">當初報名日本打工度假的最主要動機是什麼呢？</h3></div>
-          </div>
-          <div class="flex items-start gap-3 bg-red-50/60 dark:bg-red-950/20 p-4 rounded-xl border border-red-100 dark:border-red-900/50">
-            <img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5 border border-brand-red" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="A小姐">
-            <div><div class="text-xs font-bold text-brand-red mb-0.5">受訪者 A 小姐：</div><p class="text-base font-serif text-gray-800 dark:text-gray-200 leading-relaxed">「最主要就是想看雪跟滑雪！因為以前從來沒有去過那麼冷的地方。第二個是因為我很喜歡聽音樂，第一站選北海道，所以順便抽了一堆日本演唱會，就是去看雪、滑雪還有追星！」</p></div>
-          </div>
-        </section>
-
-        <section class="qa-block bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm space-y-4">
-          <div class="border-b border-gray-100 dark:border-gray-700 pb-3"><span class="px-3 py-1 bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300 text-xs font-bold rounded-full inline-flex items-center gap-1"><i class="fas fa-exclamation-triangle"></i> Q2. 找工作與代辦雷點</span></div>
-          <div class="flex items-start gap-3 bg-blue-50/60 dark:bg-blue-950/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/50">
-            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">問</div>
-            <div><div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-0.5">採訪者：</div><h3 class="text-lg font-bold font-serif text-gray-900 dark:text-white">當初的工作與住宿是如何尋找的？過程中有遇到什麼雷點嗎？</h3></div>
-          </div>
-          <div class="flex items-start gap-3 bg-red-50/60 dark:bg-red-950/20 p-4 rounded-xl border border-red-100 dark:border-red-900/50">
-            <img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5 border border-brand-red" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="A小姐">
-            <div><div class="text-xs font-bold text-brand-red mb-0.5">受訪者 A 小姐：</div><p class="text-base font-serif text-gray-800 dark:text-gray-200 leading-relaxed">「第一份北海道飯店工作是透過台灣代辦對接日本派遣公司，整體媒合不錯，但被雷到了！代辦把我的英文護照拼音弄錯了，導致日本郵局提款卡無法領取被退回三重總部，卡了好久薪水差點發不出來！後來第二份九州飯店餐廳外場，我就直接從派遣公司網站自己挑。為了省去租房前期的龐大開銷，我兩份工作都堅決找『包吃包住』的職缺。」</p></div>
-          </div>
-          <div class="bg-amber-50 dark:bg-amber-950/40 border border-amber-300 dark:border-amber-800 rounded-xl p-4 flex gap-3 text-xs sm:text-sm text-amber-900 dark:text-amber-200">
-            <i class="fas fa-exclamation-circle text-amber-600 text-lg shrink-0 mt-0.5"></i>
-            <div><strong>避雷經驗談：</strong> 透過海外代辦申辦資料時，請務必重複核對「英文護照拼音」。若拼音有任何一個字母與護照不符，日本金融機構會拒絕發卡！</div>
-          </div>
-        </section>
-
-        <section class="space-y-3">
-          <div class="text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center gap-1.5"><i class="fas fa-camera"></i> 實景相片現場紀錄 • Media Gallery</div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div onclick="openModal('https://images.unsplash.com/photo-1548777123-e216912df7d8?q=80&w=1000&auto=format&fit=crop','北海道知床流冰漫步 - 穿著特製防寒衣漂浮在海面冰層')" class="group relative rounded-xl overflow-hidden shadow cursor-pointer aspect-video border border-gray-200 dark:border-gray-700">
-              <img src="https://images.unsplash.com/photo-1548777123-e216912df7d8?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="知床流冰">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3"><span class="text-xs text-white font-medium"><i class="fas fa-search-plus mr-1"></i> 北海道知床流冰漫步體驗</span></div>
-            </div>
-            <div onclick="openModal('https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=1000&auto=format&fit=crop','九州大分溫泉大浴場 - 四個月的大浴場體驗與日常')" class="group relative rounded-xl overflow-hidden shadow cursor-pointer aspect-video border border-gray-200 dark:border-gray-700">
-              <img src="https://images.unsplash.com/photo-1542051841857-5f90071e7989?q=80&w=600&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-300" alt="大浴場">
-              <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex items-end p-3"><span class="text-xs text-white font-medium"><i class="fas fa-search-plus mr-1"></i> 九州大分溫泉飯店生活</span></div>
-            </div>
-          </div>
-        </section>
-
-        <div class="my-8 p-6 sm:p-8 border-y-2 border-brand-red bg-brand-red/5 dark:bg-brand-red/10 text-center relative editorial-quote rounded-xl">
-          <blockquote class="text-xl sm:text-2xl font-serif font-black text-gray-900 dark:text-white leading-snug">「整間公司只有我一個台灣人，你沒有後路，只能逼著自己用日文聽、用日文輸出。」</blockquote>
-          <div class="flex items-center justify-center gap-3 mt-4">
-            <button onclick="copyQuote('整間公司只有我一個台灣人，你沒有後路，只能逼著自己用日文聽、用日文輸出。')" class="text-xs px-3 py-1.5 bg-brand-red text-white rounded-full font-bold hover:bg-red-700 transition flex items-center gap-1 shadow"><i class="far fa-copy"></i> 複製金句語錄</button>
-          </div>
-        </div>
-
-        <section class="qa-block bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm space-y-4">
-          <div class="border-b border-gray-100 dark:border-gray-700 pb-3"><span class="px-3 py-1 bg-green-100 text-green-800 dark:bg-green-950 dark:text-green-300 text-xs font-bold rounded-full inline-flex items-center gap-1"><i class="fas fa-heart"></i> Q3. 文化體驗與個人收穫</span></div>
-          <div class="flex items-start gap-3 bg-blue-50/60 dark:bg-blue-950/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/50">
-            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">問</div>
-            <div><div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-0.5">採訪者：</div><h3 class="text-lg font-bold font-serif text-gray-900 dark:text-white">在文化感受與個人心態上，這一年帶給你最大的收穫是什麼呢？</h3></div>
-          </div>
-          <div class="flex items-start gap-3 bg-red-50/60 dark:bg-red-950/20 p-4 rounded-xl border border-red-100 dark:border-red-900/50">
-            <img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5 border border-brand-red" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="A小姐">
-            <div><div class="text-xs font-bold text-brand-red mb-0.5">受訪者 A 小姐：</div><p class="text-base font-serif text-gray-800 dark:text-gray-200 leading-relaxed">「文化部分，九州飯店的大浴場與泡完湯喝冰牛奶的儀式感讓我深深愛上！還有在九州食堂遇到一位日本姐姐，得知我是台灣人後拉著我的手說『非常感謝台灣311大地震對日本的幫助』，離職時還送了我一堆禮物。最大的收穫是『學會一個人生活』，因為全公司只有我一個外國人，讓我的獨立能力與日語實戰力飛躍提升！」</p></div>
-          </div>
-        </section>
-
-        <section class="qa-block bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm space-y-4">
-          <div class="border-b border-gray-100 dark:border-gray-700 pb-3"><span class="px-3 py-1 bg-purple-100 text-purple-800 dark:bg-purple-950 dark:text-purple-300 text-xs font-bold rounded-full inline-flex items-center gap-1"><i class="fas fa-lightbulb"></i> Q4. 給後輩的核心建議</span></div>
-          <div class="flex items-start gap-3 bg-blue-50/60 dark:bg-blue-950/20 p-4 rounded-xl border border-blue-100 dark:border-blue-900/50">
-            <div class="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">問</div>
-            <div><div class="text-xs font-bold text-blue-600 dark:text-blue-400 mb-0.5">採訪者：</div><h3 class="text-lg font-bold font-serif text-gray-900 dark:text-white">最後，給未來的打工度假後輩，你有什麼最核心的建議與推薦的話？</h3></div>
-          </div>
-          <div class="flex items-start gap-3 bg-red-50/60 dark:bg-red-950/20 p-4 rounded-xl border border-red-100 dark:border-red-900/50">
-            <img class="w-8 h-8 rounded-full object-cover shrink-0 mt-0.5 border border-brand-red" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="A小姐">
-            <div><div class="text-xs font-bold text-brand-red mb-0.5">受訪者 A 小姐：</div><p class="text-base font-serif text-gray-800 dark:text-gray-200 leading-relaxed">「多帶一點錢！建議戶頭準備約 30 萬日幣加 4 萬台幣緊急預備金。錢帶夠才不用為了生存無休止加班。還有既然都出國了，就放開胸懷去體驗，快樂最重要！」</p></div>
-          </div>
-        </section>
-      </article>
-
-      <aside class="lg:col-span-4 space-y-8">
-        <div id="archive-section" class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 shadow-sm space-y-4">
-          <div class="flex items-center justify-between pb-3 border-b border-gray-100 dark:border-gray-700">
-            <h3 class="font-bold font-serif text-lg text-gray-900 dark:text-white flex items-center gap-2"><i class="fas fa-folder-open text-brand-red"></i> 受訪者檔案庫</h3>
-            <span class="text-xs px-2.5 py-0.5 rounded-full bg-brand-red/10 text-brand-red font-semibold">1 篇紀錄</span>
-          </div>
-          <div class="space-y-3">
-            <div class="w-full text-left p-3.5 rounded-xl border-2 border-brand-red bg-brand-red/5 dark:bg-brand-red/10 flex items-start space-x-3 shadow-sm">
-              <img class="w-12 h-12 rounded-lg object-cover shrink-0 border border-brand-red/30" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=200&auto=format&fit=crop" alt="受訪者 A 小姐">
-              <div class="overflow-hidden"><div class="text-[10px] font-bold text-brand-red uppercase tracking-wider">當前專題 • 受訪者 A</div><div class="font-bold text-xs text-gray-900 dark:text-white truncate mt-0.5">極限雪景與獨自生存的磨練</div><div class="text-[10px] text-gray-500 dark:text-gray-400 mt-0.5">北海道 / 九州 • 飯店與餐飲</div></div>
-            </div>
-            <div class="p-5 rounded-xl border border-dashed border-gray-300 dark:border-gray-700 text-center space-y-2 bg-gray-50/50 dark:bg-slate-800/40">
-              <div class="w-8 h-8 mx-auto rounded-full bg-amber-100 dark:bg-amber-950/60 text-brand-gold flex items-center justify-center text-sm"><i class="fas fa-hourglass-half"></i></div>
-              <div><div class="text-xs font-bold text-gray-700 dark:text-gray-300">未來將陸續新增</div><p class="text-[11px] text-gray-500 dark:text-gray-400 mt-1 leading-relaxed">深度海外人物採訪專題持續規劃中，敬請期待更多實戰故事！</p></div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
-  </main>
-
-  <div id="summaryDrawer" class="fixed inset-y-0 right-0 w-full sm:w-96 bg-white dark:bg-slate-900 shadow-2xl z-50 transform translate-x-full transition-transform duration-300 border-l border-gray-200 dark:border-gray-800 p-6 overflow-y-auto">
-    <div class="flex items-center justify-between pb-4 border-b border-gray-200 dark:border-gray-800">
-      <h3 class="font-bold font-serif text-lg text-brand-red flex items-center gap-2"><i class="fas fa-bolt"></i> 專題重點快報</h3>
-      <button onclick="closeSummaryDrawer()" class="p-2 text-gray-500 hover:text-gray-900 dark:hover:text-white"><i class="fas fa-times text-xl"></i></button>
-    </div>
-    <div class="space-y-6 py-6 text-xs sm:text-sm">
-      <div class="space-y-1.5"><div class="font-bold text-gray-900 dark:text-white flex items-center gap-1.5"><i class="fas fa-bullseye text-brand-red"></i> 出發動機</div><p class="text-gray-600 dark:text-gray-400">北海道賞雪滑雪，以及抽日本音樂演唱會門票。</p></div>
-      <div class="space-y-1.5"><div class="font-bold text-gray-900 dark:text-white flex items-center gap-1.5"><i class="fas fa-exclamation-circle text-amber-500"></i> 雷點警示</div><p class="text-gray-600 dark:text-gray-400">代辦護照英文拼音填寫出錯，導致郵局開戶退件延誤發薪。</p></div>
-      <div class="space-y-1.5"><div class="font-bold text-gray-900 dark:text-white flex items-center gap-1.5"><i class="fas fa-snowflake text-blue-500"></i> 極限體驗</div><p class="text-gray-600 dark:text-gray-400">知床流冰漫步，穿防寒衣漂浮在零下海面冰層。</p></div>
-      <div class="space-y-1.5"><div class="font-bold text-gray-900 dark:text-white flex items-center gap-1.5"><i class="fas fa-lightbulb text-yellow-500"></i> 關鍵建議</div><p class="text-gray-600 dark:text-gray-400">帶足資金（約 30 萬日幣 + 4 萬台幣）；首選包吃包住職缺減輕壓力。</p></div>
-    </div>
+  <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+   <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop" class="w-full h-[360px] object-cover" alt="海外人物專題">
+   <div class="absolute inset-0 hero-overlay"></div>
+   <div class="absolute bottom-0 p-6"><div class="text-xs text-gray-300">FEATURED STORY</div><div class="text-2xl font-serif font-bold mt-1">日本打工度假：在雪國學會一個人生活</div></div>
   </div>
+ </div>
+</section>
 
-  <div id="imageModal" class="fixed inset-0 bg-black/90 z-50 hidden flex items-center justify-center p-4">
-    <div class="relative max-w-4xl w-full">
-      <button onclick="closeModal()" class="absolute -top-10 right-0 text-white text-2xl hover:text-brand-red"><i class="fas fa-times"></i></button>
-      <img id="modalImg" class="w-full h-auto max-h-[80vh] object-contain rounded-lg" src="" alt="大圖">
-      <p id="modalCaption" class="text-white text-center text-xs mt-3 font-serif"></p>
-    </div>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+ <section id="featured">
+  <div class="flex items-end justify-between gap-4 mb-6"><div><div class="text-xs font-bold tracking-widest text-brand-red">FEATURED</div><h2 class="text-3xl font-black font-serif mt-1">本期人物專題</h2></div><span class="text-xs text-gray-500">01 / 目前公開專題</span></div>
+  <a href="/articles/japan-working-holiday.html" class="group grid lg:grid-cols-2 bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-gray-200 dark:border-gray-700 shadow-sm card-lift">
+   <div class="relative min-h-[280px]"><img src="https://images.unsplash.com/photo-1548777123-e216912df7d8?q=80&w=1200&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover" alt="北海道雪景"><div class="absolute top-5 left-5 px-3 py-1 bg-brand-red text-white text-xs font-bold rounded-full">人物專訪</div></div>
+   <div class="p-7 lg:p-10 flex flex-col justify-center"><div class="text-xs font-bold text-gray-500">日本｜北海道 / 九州</div><h3 class="text-3xl font-black font-serif mt-3 group-hover:text-brand-red">極限雪景與獨自生存的磨練</h3><p class="text-gray-600 dark:text-gray-300 font-serif mt-4 leading-relaxed">從看雪、滑雪與追星出發，到護照拼音危機、包吃包住工作，以及在全公司只有自己一個外國人的環境裡，用日文逼自己活下來。</p><div class="mt-7 text-sm font-bold text-brand-red">閱讀完整專題 →</div></div>
+  </a>
+ </section>
+
+ <section id="latest" class="mt-16">
+  <div class="text-xs font-bold tracking-widest text-brand-red">LATEST STORIES</div><h2 class="text-3xl font-black font-serif mt-1">最新報導</h2>
+  <div class="grid md:grid-cols-3 gap-5 mt-6">
+   <a href="/articles/japan-working-holiday.html#q2" class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 card-lift"><i class="fas fa-passport text-brand-red text-xl"></i><h3 class="font-serif font-bold text-xl mt-4">海外代辦踩雷：文件細節為什麼重要？</h3><p class="text-sm text-gray-500 mt-2">從一次護照拼音錯誤，看見出國前資料核對的重要性。</p></a>
+   <a href="/articles/japan-working-holiday.html#q3" class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 card-lift"><i class="fas fa-language text-brand-red text-xl"></i><h3 class="font-serif font-bold text-xl mt-4">一個外國人的日文實戰</h3><p class="text-sm text-gray-500 mt-2">沒有熟悉語言的同伴時，生活會變成什麼樣子？</p></a>
+   <a href="/articles/japan-working-holiday.html#q4" class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-gray-200 dark:border-gray-700 card-lift"><i class="fas fa-wallet text-brand-red text-xl"></i><h3 class="font-serif font-bold text-xl mt-4">打工度假資金準備</h3><p class="text-sm text-gray-500 mt-2">受訪者分享自己的緊急預備金經驗與工作選擇。</p></a>
   </div>
+ </section>
 
-  <footer class="bg-brand-dark text-gray-400 text-xs py-8 border-t border-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-2">
-      <div class="font-serif text-lg font-bold text-white">GLOBAL INSIGHTS EDITORIAL</div>
-      <p>© 2026 GLOBAL INSIGHTS. 日本打工度假特派人物專題報導。</p>
-    </div>
-  </footer>
-
-  <script src="./assets/js/main.js"></script>
-</body>
-</html>
+ <section id="about" class="mt-16 bg-brand-dark text-white rounded-3xl p-8 lg:p-12">
+  <div class="max-w-3xl"><div class="text-xs font-bold tracking-widest text-brand-gold">ABOUT GLOBAL INSIGHTS</div><h2 class="text-3xl font-black font-serif mt-2">不只記錄「去哪裡」，也記錄「怎麼活下來」。</h2><p class="text-gray-300 font-serif leading-relaxed mt-5">Global Insights 以人物採訪為核心，把海外工作、住宿、語言、文化與那些意料之外的插曲整理成可閱讀、可延伸的專題。未來可以持續新增不同國家、不同職業與不同人生選擇的故事。</p></div>
+ </section>
+</main>
+<footer class="bg-brand-dark text-gray-400 text-xs py-10 mt-16">
+ <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-3 gap-8">
+  <div><div class="font-serif text-xl font-bold text-white">GLOBAL INSIGHTS</div><p class="mt-2 leading-relaxed">海外人物、生活現場與跨文化故事的深度專題平台。</p></div>
+  <div><div class="font-bold text-white mb-2">網站導覽</div><a class="block hover:text-white" href="/index.html">首頁</a><a class="block hover:text-white" href="/articles/japan-working-holiday.html">日本打工度假專題</a></div>
+  <div><div class="font-bold text-white mb-2">Editorial</div><p>© 2026 GLOBAL INSIGHTS. All rights reserved.</p></div>
+ </div>
+</footer>
+<div id="toast" class="fixed bottom-8 right-5 z-50 bg-brand-dark text-white text-xs px-4 py-3 rounded-xl shadow-2xl translate-y-20 opacity-0 transition-all"><i class="fas fa-check-circle text-brand-gold mr-2"></i><span data-toast-msg>系統通知</span></div>
+<script src="/assets/js/main.js"></script></body></html>
